@@ -38,6 +38,7 @@
     elm.style.height = size + 'px';
     elm.style.left = (e.clientX-size/2)+'px';
     elm.style.top = (e.clientY-size/2)+'px';
+    elm.style.zIndex = '9999';
     vender(elm, 'transition', tap.options.duration + 'ms');
   
     elm.addEventListener('webkitTransitionEnd', function() {
