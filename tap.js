@@ -16,13 +16,13 @@
   };
 
   tap.enable = function() {
-    window.addEventListener('mousedown', tap._run);
-    window.addEventListener('ontouchstart', tap._run);
+    window.addEventListener('mouseup', tap._run);
+    window.addEventListener('touchend', tap._run);
   };
 
   tap.disable = function() {
-    window.removeEventListener('mousedown', tap._run);
-    window.removeEventListener('ontouchstart', tap._run);
+    window.removeEventListener('mouseup', tap._run);
+    window.removeEventListener('touchend', tap._run);
   };
 
   tap._run = function(e) {
