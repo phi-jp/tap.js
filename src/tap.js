@@ -1,11 +1,3 @@
-/* 
- * tap.js 0.1.0
- * tap.js is a javascript library.
- * MIT Licensed
- * 
- * Copyright (C) 2015 phi, https://github.com/phi-jp/tap.js
- */
-
 
 ;(function(ns) {
 

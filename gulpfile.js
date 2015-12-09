@@ -21,10 +21,20 @@ var banner = [
 ].join('\n');
 
 
-gulp.task('default', ['uglify']);
+gulp.task('default', ['copy', 'uglify']);
+
+gulp.task('copy', function() {
+  return gulp
+    .src('./src/tap.js')
+    .pipe(header(banner, {
+      pkg: pkg,
+    }))
+    .pipe(gulp.dest('./'))
+    ;
+});
 
 gulp.task('uglify', function() {
-  return gulp.src('./tap.js')
+  return gulp.src('./src/tap.js')
     .pipe(uglify())
     .pipe(header(banner, {
       pkg: pkg,
