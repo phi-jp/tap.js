@@ -36,9 +36,12 @@
     elm.style.borderRadius = '50%';
     elm.style.width = size + 'px';
     elm.style.height = size + 'px';
-    elm.style.left = (e.clientX-size/2)+'px';
-    elm.style.top = (e.clientY-size/2)+'px';
+
+    var p = (e.type === 'touchend') ? e.changedTouches[0] : e;
+    elm.style.left = (p.clientX-size/2)+'px';
+    elm.style.top = (p.clientY-size/2)+'px';
     elm.style.zIndex = '9999';
+
     vender(elm, 'transition', tap.options.duration + 'ms');
   
     elm.addEventListener('webkitTransitionEnd', function() {
